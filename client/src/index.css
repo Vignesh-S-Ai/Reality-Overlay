@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Aptos", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(251, 191, 36, 0.2), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #eef4ff 52%, #f5f7fb 100%);
+  color: #0f172a;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.dark body,
+body.dark {
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.16), transparent 25%),
+    linear-gradient(180deg, #07111f 0%, #0b1728 48%, #08101d 100%);
+  color: #e2e8f0;
+}
+
+.glass-card {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.dark .glass-card {
+  background: rgba(8, 15, 29, 0.76);
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
