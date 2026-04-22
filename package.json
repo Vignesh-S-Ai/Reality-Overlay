@@ -1,0 +1,18 @@
+{
+  "name": "reality-overlay-study-assistant",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "concurrently -k -n SERVER,CLIENT -c green,cyan \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "dev": "npm start",
+    "build": "npm run build --workspace client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
+
